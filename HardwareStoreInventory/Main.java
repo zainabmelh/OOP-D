@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.Scanner;
 public class Main {
     private void displayMenu () {
         System.out.println("\nMain Menu");
@@ -10,8 +10,36 @@ public class Main {
         "\n    " + EXIT + ". Exit program.");
     }
 
+    private int userInput () {
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        int n = reader.nextInt();
+        // reader.close();
+        return n;
+    }
+
+    private void userSelection () {
+        int selection = main.userInput();
+        switch (selection) {
+            case 1: System.out.println("case1");
+                break;
+            case 2: System.out.println("case2");
+                break;
+            case 3: System.out.println("case3");
+                break;
+            case 4: System.out.println("case4");
+                break;
+            case 5: System.out.println("case5");
+                break;
+            case 6: System.out.println("case6");
+                break;
+        }
+    }
+
     public static void main (String[] args) {
         main.displayMenu();
+        main.userSelection();
+
     }
 
     private static final int SHOW_EXISTING_ITEMS = 1,
