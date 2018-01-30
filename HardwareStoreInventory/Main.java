@@ -8,6 +8,8 @@ public class Main {
         "\n    " + SEARCH_FOR_ITEM + ". Search for an item (given its name or part of its name)." +
         "\n    " + LIST_ITEMS_BELOW_QUANTITY + ". Show a list of all item below a certain quantity." +
         "\n    " + EXIT + ". Exit program.");
+
+        main.userInput();
     }
 
     private int userInput () {
@@ -17,7 +19,11 @@ public class Main {
         // reader.close();
         return n;
     }
-
+    private void startOver () {
+        if (userInput() < 1 || userInput() > 6) {
+            main.displayMenu();
+        }
+    }
     private void userSelection () {
         int selection = main.userInput();
         switch (selection) {
@@ -33,12 +39,14 @@ public class Main {
                 break;
             case 6: System.out.println("case6");
                 break;
+            default: main.startOver();
         }
     }
 
     public static void main (String[] args) {
         main.displayMenu();
         main.userSelection();
+
 
     }
 
